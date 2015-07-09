@@ -1,0 +1,76 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', type='text/css', href='/less/layout.css')
+		link(rel="stylesheet" href="/less/footer.css")
+		link(rel="stylesheet" href="/css/bootstrap.min.css")
+		link(href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/css/vegas.min.css")
+
+		block styles
+
+	body
+		.container-fluid.header
+			.row
+				.fixed1
+					.fades
+				.ascelogo
+					img(src='/img/asce.png')
+				.nitklogo
+					img(src='/img/enginw.png')
+				ul.nav-menu
+					li.flip-wrapper
+						.flipper
+							.front.home
+								|HOME
+							.back
+								i.fa.fa-home
+					li.flip-wrapper
+						.flipper
+							.front
+								|EVENTS
+							.back
+								a(href='/events')
+									i.fa.fa-home
+					li.flip-wrapper
+						.flipper
+							.front
+								|OPPORTUNITIES
+							.back
+								i.fa.fa-home
+					li.flip-wrapper
+						.flipper
+							.front
+								|COLLABORATE
+							.back
+								i.fa.fa-home
+					li.flip-wrapper
+						.flipper
+							.front
+								|MEMBERS
+							.back
+								i.fa.fa-home
+					li.flip-wrapper
+						.flipper
+							.front
+								|GALLERY
+							.back
+								i.fa.fa-home
+				.main-content
+					block content
+
+
+				include ./footer.jade
+
+
+		script(src="/js/modernizr.custom.17475.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script(src="/js/skrollr.min.js")
+		script(src="/js/vegas.min.js")
+		script(src="/js/jquery.elastislide.js")
+		script(src="/js/override.js")
+
+
+		block srcipts

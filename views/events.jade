@@ -1,0 +1,24 @@
+extends base_layout
+
+block styles
+	link(rel='stylesheet', type='text/css', href='/less/events.css')
+
+block content
+		.container-fluid
+			.row
+				section.parallax-wrapper
+					.parallax
+					h1 Events
+			.row
+				.container.main-content
+					.row
+						.col-md-12
+							h3.text-center Events
+						.col-md-4
+							#mini-clndr
+								include ./date.html
+						.col-md-8
+							.row 
+								.col-md-4
+								.col-md-4
+								.col-md-4

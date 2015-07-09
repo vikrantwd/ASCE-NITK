@@ -1,0 +1,121 @@
+.ribbon{
+	font-size:16px !important;
+	width:50%;
+	position:relative;
+	background:#dd2d2d;
+	color:#fff;
+	text-align:center;
+	padding:0 2em
+}
+.ribbon:before,.ribbon:after{
+	content:"";
+	position:absolute;
+	display:block;
+	bottom:-1em;
+	border:2.5em solid #bb2828;
+	z-index:-1
+}
+.ribbon:before{
+	left:-3em;
+	border-right-width:1.5em;
+	border-left-color:transparent
+}
+.ribbon:after{
+	right:-3em;
+	border-left-width:1.5em;
+	border-right-color:transparent
+}
+.ribbon .ribbon-content:before,.ribbon .ribbon-content:after{
+	content:"";
+	position:absolute;
+	display:block;
+	border-style:solid;
+	border-color:#523838 transparent transparent transparent;
+	bottom:-15px
+}
+.ribbon .ribbon-content:before{
+	left:1px;
+	border-width:1em 0 0 1em
+}
+.ribbon .ribbon-content:after{
+	right:1px;
+	border-width:1em 1em 0 0
+}
+.overlay{
+    position: relative;
+}
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 110px;
+  width: 100px;
+  height: 100px;
+  background: url("/img/enginw.png") no-repeat 0 0;
+  z-index: 3;
+  background-size: contain;
+}
+.overlay::after{
+	 z-index: 2;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  -webkit-filter: blur(2px);
+  transform: scale(2) translateY(20px);
+}
+.vegas-timer{
+}
+.event-list{
+	list-style-type: none;
+	.about-event{
+		display: flex;
+		 position: relative;
+  		left: 133px;
+  		.quirky-desc{
+  			position: absolute;
+ 			left:208px;
+  		}
+	}
+	.event-details {
+		display:flex;
+		.pic{
+			height:150px;
+			width:200px;
+			margin:0px 10px 10px 0px;
+			float: left;
+			.event-pic{
+				width: 100%;
+				height:100%;
+			}
+		}
+		.event-summary{
+
+		}
+	}
+	li {
+		  padding: 20px 30px 4px 0px;
+		  margin-bottom: 20px;
+		  background-color: rgb(225,230,250);
+		  opacity: .99;
+		}
+
+}
+.navbar-custom{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(43, 52, 43,.9);
+  border-radius: 0;
+  color: white;
+  z-index: 7;
+  ul{
+  	list-style-type: none;
+  	margin:0px;
+  	padding:0px;
+  }
+}

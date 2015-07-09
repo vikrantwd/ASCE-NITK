@@ -1,0 +1,72 @@
+html
+	head
+		title= title
+
+		link(rel="stylesheet" href="/css/bootstrap.min.css")
+		link(rel="stylesheet" href="/less/base_layout.css")
+		link(rel="stylesheet" href="/less/footer.css")
+		link(href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+
+		block styles
+
+	body
+		.rel
+			.container-fluid
+				.row.nav-menu-wrapper
+					.ascelogo
+						img(src='/img/asce.png')
+					ul.nav-menu
+						li.flip-wrapper
+							.flipper
+								.front.home
+									|HOME
+								.back
+									i.fa.fa-home
+						li.flip-wrapper
+							.flipper
+								.front
+									|EVENTS
+								.back
+									a(href='/events')
+										i.fa.fa-home
+						li.flip-wrapper
+							.flipper
+								.front
+									|OPPORTUNITIES
+								.back
+									i.fa.fa-home
+						li.flip-wrapper
+							.flipper
+								.front
+									|COLLABORATE
+								.back
+									i.fa.fa-home
+						li.flip-wrapper
+							.flipper
+								.front
+									|MEMBERS
+								.back
+									i.fa.fa-home
+						li.flip-wrapper
+							.flipper
+								.front
+									|GALLERY
+								.back
+									i.fa.fa-home
+				.row
+					.main-content
+						block content
+
+
+				include ./footer.jade
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script(src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js")
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js")
+		script(src="/js/moment-2.8.3.js")
+		script(src="/js/clndr.js")
+		script(src='/js/events.js')
+
+
+		block srcipts

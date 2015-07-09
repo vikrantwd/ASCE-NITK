@@ -1,0 +1,122 @@
+.about-content{
+	  background-color: rgb(234, 234, 234);
+	  padding:15px;
+	  margin-bottom: 30px;
+	  	ul{
+		padding:0 20px!important
+	}
+	  font-size: 15px;
+  line-height: 20px;
+}
+
+.about-image{
+	position: relative;
+}
+.mission-content{
+  	position: relative;
+  	margin-bottom:60px;
+	&::after {
+	  position: absolute;
+	  content: '';
+	  width: 50%;
+	  left: 26%;
+	  background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+	  height: 2px;
+	  bottom:-30px;
+	}
+}
+.mission,.vision{
+	margin-top:10px;
+	h4{
+		text-align: center;
+	}
+}
+
+.item-image {
+  height: 190px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax{
+
+    position: absolute;
+  background-image: url('/img/par1.jpg');
+   left: -10px; 
+   right: -10px;
+  -webkit-background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  -webkit-background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  margin-left: -100px;
+  height: 500px;
+  margin: -20px;
+  line-height: 20px;
+}
+.parallax-wrapper{
+	  position: relative;
+  height: 300px;
+  margin: 20px 0px 40px;
+  perspective: 0;
+  z-index: 1;
+  overflow: hidden;
+  h1{
+  	  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  }
+}
+.top-section {
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  img{
+  	width: 100%;
+  	display: block;
+  	margin: 0px 0px 30px;
+  }
+  h3{
+  	text-align: center;
+    font-size: 20px
+  }
+  .section-text{
+  	min-height: 200px;  
+  	p{
+  		text-align: justify;
+  	}
+  }
+}
+
+
+blockquote p::after {
+  position: absolute;
+  content: "\f10e";
+  font-family: FontAwesome;
+}
+blockquote p::before {
+  position: absolute;
+  content: "\f10d";
+  font-family: FontAwesome;
+  top: -5px;
+  left: -18px;
+}
+blockquote p {
+  position: relative;
+  left: 20px;
+  line-height: 22px
+}
+.border-0{
+  border-radius: 0;
+}
