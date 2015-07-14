@@ -1,0 +1,196 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+#side-sub-menu {
+  position: relative;
+  margin: 0;
+  font-family: 'Roboto Condensed';
+  line-height: 1;
+  width: 210px;
+  padding-top: 24px;
+}
+.align-right {
+  float: right;
+}
+#side-sub-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+#side-sub-menu ul li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+    margin-bottom: 1px;
+}
+#side-sub-menu ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+#side-sub-menu > ul > li > a {
+  color: #dddddd;
+  text-transform: uppercase;
+  display: block;
+  padding: 20px;
+  background: #69a776;;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  position: relative;
+}
+
+#side-sub-menu > ul > li:hover > a,
+#side-sub-menu > ul > li.open > a,
+#side-sub-menu > ul > li.active > a {
+  background: #528b5e;;
+  color: #ffffff;
+}
+
+#side-sub-menu ul > li.has-sub > a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 13px solid #528b5e;
+  border-bottom: 13px solid transparent;
+    border-left: 104px solid transparent;
+  border-right: 104px solid transparent;
+  left: 0px;
+  /* bottom: 5px; */
+  top: 56px;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transition: all .2s cubic-bezier(1, -0.34, 0.8, 0.62);
+  -moz-transition: all .2s cubic-bezier(1, -0.34, 0.8, 0.62);
+  -ms-transition: all .2s cubic-bezier(1, -0.34, 0.8, 0.62);
+  -o-transition: all .2s cubic-bezier(1, -0.34, 0.8, 0.62);
+  transition: all .2s cubic-bezier(1, -0.34, 0.8, 0.62);
+}
+.arrow {
+  position: absolute;
+  border-left: 14px solid #EAEAEA;
+  border-right: 14px solid transparent;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  height: 0;
+  width: 0;
+  right: -28px;
+  top: 10px;
+}
+.arrow:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 28px;
+  border-bottom: 1px solid #ccc;
+  right: 6px;
+  top: -17px;
+  transform: rotate(-45deg);
+}
+
+#side-sub-menu ul > li:hover::after,
+#side-sub-menu ul > li.active::after,
+#side-sub-menu ul > li.open::after {
+  border-top-color: #ffffff;
+}
+#side-sub-menu ul > li.has-sub.open > a::after {
+  opacity: 1;
+  bottom: -13px;
+}
+#side-sub-menu ul > li.has-sub.open > a::before {
+  opacity: 1;
+  bottom: -12px;
+}
+#side-sub-menu ul ul {
+  display: none;
+}
+#side-sub-menu ul ul li {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+    margin-top: 1px;
+}
+#side-sub-menu ul ul li a {
+  background: #f1f1f1;
+  display: block;
+  position: relative;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #dddddd;
+  color: #777777;
+  font-weight: 300;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+#side-sub-menu ul ul li:first-child > a {
+  padding-top: 18px;
+}
+#side-sub-menu ul ul ul li {
+  border: 0;
+}
+#side-sub-menu ul ul li:hover > a,
+#side-sub-menu ul ul li.open > a,
+#side-sub-menu ul ul li.active > a {
+  background: #EAEAEA;
+  color: #666666;
+}
+#side-sub-menu ul ul > li.has-sub > a::after {
+  border-top: 13px solid #dddddd;
+}
+#side-sub-menu ul ul > li.has-sub > a::before {
+  border-top: 13px solid #e4e4e4;
+}
+#side-sub-menu ul ul ul li a {
+  padding-left: 30px;
+}
+#side-sub-menu ul ul > li.has-sub::after {
+  top: 18.5px;
+  border-width: 6px;
+  border-top-color: #777777;
+}
+/*hamburger*/
+#nav-button{ position: absolute; left: 85%; top: 50%; height: 2px;
+  width: 17px;}
+
+#nav-button{ cursor: pointer; padding: 0px; }
+span#nav-button, span#nav-button:before, span#nav-button:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 2px;
+  width: 17px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+span#nav-button:before {
+  top: -4px; 
+}
+span#nav-button:after {
+  bottom: -4px;
+}
+
+span#nav-button, span#nav-button:before, span#nav-button:after {
+  transition: all 500ms ease-in-out;
+}
+ span#nav-button.active {
+  background-color: transparent;
+}
+ span#nav-button.active:before,  span#nav-button.active:after {
+  top: 0;
+}
+ span#nav-button.active:before {
+  transform: rotate(45deg);
+}
+ span#nav-button.active:after {
+  transform: rotate(-45deg);
+}

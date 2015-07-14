@@ -99,7 +99,7 @@ $(document).on( 'scroll', function(){
     }
 
     if(pos+174>pos3){/*logo nitk fades*/
-            $('.nitklogo').css({'opacity':'0','transition':'opacity .5s ease'})
+            $('.nitklogo').css({'opacity':'0','transition':'opacity .3s ease'})
     }else{
         $('.nitklogo').css('opacity','1')
     }
@@ -116,9 +116,9 @@ $(document).on( 'scroll', function(){
         $('.ascelogo').css({'left':'3%','top':'20px','transition':'left .5s ease, top .5s ease'});
     }
     if(pos+143>pos3){
-        $('.nav-menu').style('padding-left','256px','important').css('transition','padding .9s ease');
+        $('.nav-menu').style('padding-left','256px','important').css('transition','padding .6s ease');
     }else{
-         $('.nav-menu').style('padding-left','0px','important').css('transition','padding .9s ease');
+         $('.nav-menu').style('padding-left','0px','important').css('transition','padding .6s ease');
     }
 });
 

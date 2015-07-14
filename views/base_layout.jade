@@ -22,7 +22,8 @@ html
 								.front.home
 									|HOME
 								.back
-									i.fa.fa-home
+									a(href='/')
+										i.fa.fa-home
 						li.flip-wrapper
 							.flipper
 								.front
@@ -32,28 +33,32 @@ html
 										i.fa.fa-home
 						li.flip-wrapper
 							.flipper
-								.front
-									|OPPORTUNITIES
+								.front OPPORTUNITIES
 								.back
-									i.fa.fa-home
+									a(href='/opportunities')
+										i.fa.fa-home
 						li.flip-wrapper
 							.flipper
 								.front
 									|COLLABORATE
 								.back
-									i.fa.fa-home
+									a(href='/collaborate')
+										i.fa.fa-home
 						li.flip-wrapper
 							.flipper
 								.front
 									|MEMBERS
 								.back
-									i.fa.fa-home
+									a(href='/members')
+										i.fa.fa-home
 						li.flip-wrapper
 							.flipper
 								.front
 									|GALLERY
 								.back
 									i.fa.fa-home
+					.clearfix
+				.clearfix
 				.row
 					.main-content
 						block content
@@ -63,10 +68,4 @@ html
 
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		script(src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js")
-		script(src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js")
-		script(src="/js/moment-2.8.3.js")
-		script(src="/js/clndr.js")
-		script(src='/js/events.js')
-
-
-		block srcipts
+		block scripts

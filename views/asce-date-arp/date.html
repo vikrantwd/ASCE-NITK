@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<link rel="stylesheet" type="text/css" href="css/clndr.css">
+<body>
+  <div id="mini-clndr">
+
+  </div>
+
+  <script id="calendar-template" type="text/template">
+      
+      <div class="controls">
+              <div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %></div><div class="clndr-next-button">&rsaquo;</div>
+            </div>
+
+            <div class="days-container">
+              <div class="days">
+                <div class="headers">
+                  <% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
+                </div>
+                <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
+              </div>
+              <div class="events">
+                <div class="headers">
+                  <div class="x-button">x</div>
+                  <div class="event-header">EVENTS</div>
+                </div>
+                <div class="events-list">
+                  <% _.each(eventsThisMonth, function(event) { %>
+                    <div class="event">
+                      <a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
+                    </div>
+                  <% }); %>
+                </div>
+              </div>
+            </div>
+  </script>
+<script src="js/jquery2.js"></script>
+<script src = "js/underscore.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/clndr.js"></script>
+<script src='js/events.js'></script>
+
+</body>
+</html>

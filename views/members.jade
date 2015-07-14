@@ -1,0 +1,103 @@
+extends base_layout
+
+block styles
+	link(rel='stylesheet', type='text/css', href='/less/events.css')
+	link(rel='stylesheet', type='text/css', href='/css/sidemenu.css')
+
+block content
+		.container-fluid.members-page
+			.row
+				section.parallax-wrapper
+					.parallax
+					h1= title
+			.row
+				.container.main-content
+					.row
+						.col-md-3
+							#side-sub-menu
+								ul.side-menu
+									li.has-sub.open
+										a  Current Batch
+											span#nav-button
+										ul
+											li.active
+												a(href="#") Officers
+												.arrow
+											li
+												a(href="#") Other Members 
+											li
+												a(href="#") Faculty
+									li.has-sub
+										a(href="#") Previous Batch
+											span#nav-button
+										ul
+											li
+												a(href="#") 2014-2015
+									li.has-sub
+										a(href="#") Become A Member
+											span#nav-button
+										ul
+											li
+												a(href="#") Recruitment
+											li
+												a(href="#") Become national member
+						.col-md-8
+							.row 
+								.col-md-12
+									h3= title
+									p
+										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
+										|Collosus 
+										|Mindbend 
+										|Nirvanha  
+										|Architect 
+										|Fanatasticity
+									p
+										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
+										|Collosus 
+										|Mindbend 
+										|Nirvanha  
+										|Architect 
+										|Fanatasticity
+								.clearfix
+								.image-banner
+									.col-md-12
+										h4 Core Members
+									section
+										.col-md-4
+											.thumb(style="background-image:url('/img/autocad-opp.png')")
+												div
+													.p-10
+														h2 Autocad
+														p I'll teach Y'all
+														.bottom-text
+															h4 Contact
+															.details Vamshi
+															.details Department
+											a.btn.btn-primary.read-more Read More
+										.col-md-4
+											.thumb(style="background-image:url('/img/sap.png')")
+												div
+													.p-10
+														h2 SAP
+														p learn it bro
+														.bottom-text
+															h4 Contact
+															.details Vamshi 
+															.details 3rd Year (8197184718)
+											a.btn.btn-primary.read-more Read More
+										.col-md-4
+											.thumb(style="background-image:url('/img/staad.jpg')")
+												div
+													.p-10
+														h2 STAAD
+														p learn it bro
+														.bottom-text
+															h4 Contact
+															.details Vamshi 
+															.details 3rd Year (8197184718)
+											a.btn.btn-primary.read-more Read More	
+										.clearfix
+										
+block scripts
+		script(type="text/javascript" src="/js/sidemenu.js")

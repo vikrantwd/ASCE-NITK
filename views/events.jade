@@ -4,7 +4,7 @@ block styles
 	link(rel='stylesheet', type='text/css', href='/less/events.css')
 
 block content
-		.container-fluid
+		.container-fluid.events-page
 			.row
 				section.parallax-wrapper
 					.parallax
@@ -12,13 +12,62 @@ block content
 			.row
 				.container.main-content
 					.row
-						.col-md-12
-							h3.text-center Events
-						.col-md-4
-							#mini-clndr
-								include ./date.html
+						.col-md-3.clndr-area
+							include asce-date-arp/date.html
 						.col-md-8
 							.row 
-								.col-md-4
-								.col-md-4
-								.col-md-4
+								.col-md-12
+									h3 Events
+									p
+										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
+										|Collosus 
+										|Mindbend 
+										|Nirvanha  
+										|Architect 
+										|Fanatasticity
+									p
+										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
+										|Collosus 
+										|Mindbend 
+										|Nirvanha  
+										|Architect 
+										|Fanatasticity
+								.clearfix
+								.image-banner
+									.col-md-4
+										.thumb(style="background-image:url('/img/engipic.jpg')")
+											div
+												.p-10
+													h2 ENINEER
+													p Be there
+													.bottom-text
+														h4 Time and Venue
+														.pull-left 1 jul
+														.pull-right Department
+														.clearfix
+										a.btn.btn-primary.read-more Read More
+									.col-md-4
+										.thumb(style="background-image:url('/img/sand-castle.jpg')")
+											div
+												.p-10
+													h2 Costruzione
+													p Make it beak it fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck
+													.bottom-text
+														h4 Time and Venue
+														.pull-left 1 jul
+														.pull-right SAC
+														.clearfix
+										a.btn.btn-primary.read-more Read More
+									.col-md-4
+										.thumb(style="background-image:url('/img/engipic.jpg')")
+											div
+												.p-10
+													h2 School Engg
+													p gotta teach 'em all
+													.bottom-text
+														h4 Time and Venue
+														.pull-left 30 jun
+														.pull-right MB
+														.clearfix
+										a.btn.btn-primary.read-more Read More
+									.clearfix

@@ -8,6 +8,15 @@ router.get('/', function(req, res, next) {
 router.get('/events', function(req, res, next) {
   res.render('events', { title: 'ASCE Events' });
 });
+router.get('/opportunities', function(req, res, next) {
+  res.render('opportunities', { title: 'Opportinities' });
+});
+router.get('/collaborate', function(req, res, next) {
+  res.render('opportunities', { title: 'Collaboration' });
+});
+router.get('/members', function(req, res, next) {
+  res.render('members', { title: 'Members' });
+});
 
 
 module.exports = router;

@@ -1,3 +1,107 @@
-.parallax{
+.events-page .parallax{
   background-image: url('/img/para2.jpg');
+}
+.opportunities-page .parallax{
+  background-image: url('/img/opportunities.jpg');
+}
+.members-page .parallax{
+  background-image:url('/img/people.jpeg')
+}
+.members-page{
+  .thumb{
+    width: 100%;
+    height: 190px;
+  }
+}
+.image-banner {
+  position: relative;
+  padding: 36px 0px;
+  margin: 20px 0px;
+}
+.image-banner::before {
+  position: absolute;
+  content: '';
+  width: 85%;
+  left: 7%;
+  background: linear-gradient(to right, rgba(255,255,255,0), #ccc, rgba(255,255,255,0));
+  height: 1px;
+  top: 0px;
+}
+/*arpan*/
+.thumb {
+    border: 5px solid #fff;
+    cursor: pointer;
+    height: 182px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    -moz-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    background-size: cover!important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    & h4{
+    margin-bottom: 4px;
+    }
+}
+.thumb > div {
+    background-color: rgba(0,0,0,0.75);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transition: opacity 0.3s linear;
+    text-shadow: #000 1px 1px 0;
+    color: #ccc;
+}
+.thumb:hover > div {
+    display: block;
+    opacity: 1.0;
+}
+.p-10 {
+    padding: 10px;
+}
+.thumb h2 {
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
+.thumb p {
+    margin-bottom: 10px;
+}
+.bottom-text{
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 5px;
+}
+.read-more{
+  padding: 5px;
+  position: relative;
+  left: 5px;
+  top: 9px;
+  width: 200px;
+  background-color: #0F1010;
+  border-color: #1D1D1D;
+  border-radius:0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 1px 1px #ccc;
+  &:hover{
+      border-color: black;
+      background-color: black;
+  }
+}
+ .project-info{
+    position: absolute;
+  bottom: 0px;
+  right: 0;
+  font-size: 10px
+ }
+.project-section{
+  position: relative;
 }
