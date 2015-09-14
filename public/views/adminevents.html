@@ -1,0 +1,23 @@
+<div class="col-md-12" ng-controller="EventsOppCollCtrl">
+	<div class="row">{{uid}}
+		<div class="clearfix"></div>
+		<h2>Listed {{cat}}</h2>
+		<hr/>
+		<table class="table table-bordered table-striped">
+			<tbody>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tbody>
+			<tr ng-repeat="entity in drafts" class="pointer">
+				<td>{{entity.title}}</td>
+				<td>{{entity.maindesc}}</td>
+				<td><button class="btn btn-sm btn-warning" ng-click="edit(entity._id,$index)">Edit</button> <button class="btn btn-sm btn-danger" ng-click="delete(entity._id)">Delete</button></td>
+			</tr>
+		</table>
+		<hr/>
+		<div class="col-md-3">
+			<button class="btn btn-block btn-primary input-block" ng-click="add(cat)">Add</button>
+		</div>
+	</div>
+</div>

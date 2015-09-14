@@ -1,0 +1,45 @@
+<div class="col-md-12" ng-controller="GalleryCtrl">
+	<h2>Add Pics</h2>
+	<div class="row form-group">
+		<div class="col-md-2">
+			<input type="text" placeholder="Link" ng-model="draft.link">
+		</div>
+		<div class="col-md-2">
+			<input type="text" placeholder="Title" ng-model="draft.title">
+		</div>
+		<div class="col-md-2">
+			<input type="text" placeholder="Album" ng-model="draft.about.album">
+		</div>
+		<div class="col-md-2">
+			<input type="text" placeholder="Description" ng-model="draft.about.desc">
+		</div>
+		<div class="col-md-2">
+			<input type="text" placeholder="Date" ng-model="draft.about.date">
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-success btn-block" ng-click="add()">
+			Add Pic</button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<th>Link</th>
+			<th>Title</th>
+			<th>Album</th>
+			<th>Description</th>
+			<th>Date</th>
+			<th>Action</th>
+		</tbody>
+		<tr ng-repeat="image in drafts">
+			<td><input type="text" ng-model="image.pics.link"></td>
+			<td><input type="text" ng-model="image.pics.title"></td>
+			<td><input type="text" ng-model="image.pics.about.album"></td>
+			<td><input type="text" ng-model="image.pics.about.desc"></td>
+			<td><input type="text" ng-model="image.pics.about.date"></td>
+			<td>
+				<button class="btn btn-sm btn-warning" ng-click="update(image._id,$index)">Update</button> <button class="btn btn-sm btn-danger" ng-click="delete(image._id)">Delete</button>
+			</td>
+		</tr>
+	</table>
+</div>

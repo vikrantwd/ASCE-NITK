@@ -11,27 +11,24 @@ block content
 					.row
 						.col-md-4.section-item
 							.section-text
-								h3 Events
-								p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, urna ac gravida semper, magna nisl sodales est, ut finibus dolor est nec nunc. Pellentesque imperdiet felis eget tellus ultrices, ut venenatis risus rhoncus. Phasellus ac vestibulum urna. Proin nisl nisi, gravida ut vehicula ut, feugiat tempor quam.
-							.item-image(style="background: url('/img/bridge.jpg')")
-							a.btn.btn-primary.border-0 Read More
+								h3= data[0].col1.title
+								p= data[0].col1.desc
+							.item-image(style="background: url('#{data[0].col1.imagelink}')")
+							a(href="#{data[0].col1.link}").btn.btn-primary.border-0 Read More
 							.clearfix
 						.col-md-4.section-item
 							.section-text
-								h3 Opportunities
-								p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, urna ac gravida semper, magna nisl sodales est, ut finibus dolor est nec nunc. Pellentesque imperdiet felis eget tellus ultrices, ut venenatis risus rhoncus.
-							.item-image(style="background: url('/img/engipic.jpg');")
-							a.btn.btn-primary.border-0 Read More
+								h3= data[0].col2.title
+								p= data[0].col2.desc
+							.item-image(style="background: url('#{data[0].col2.imagelink}');")
+							a(href="#{data[0].col2.link}").btn.btn-primary.border-0 Read More
 							.clearfix
 						.col-md-4.section-item
 							.section-text
-								h3 Collaborate
-								p
-									|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, urna ac gravida semper
-							.item-image(style="background: url('/img/autocad.jpg');")
-							a.btn.btn-primary.border-0 Read More
+								h3= data[0].col3.title
+								p= data[0].col3.desc
+							.item-image(style="background: url('#{data[0].col3.imagelink}');")
+							a(href="#{data[0].col3.link}").btn.btn-primary.border-0 Read More
 							.clearfix
 		.container-fluid
 			.row
@@ -45,13 +42,12 @@ block content
 						.col-md-6.mission
 							h4 Mission
 							ul
-								li To equip students with comprehensive understanding to emerge out as leaders who will set standards for a corruption free and ethical society.
-								li  To inculcate a sense of responsibility towards the society and its vulnerable sections.
-								li To kindle a zeal among engineers to keep themselves abreast with latest developments in their profession and to extend the ambit of learning to all possible avenues throughout their professional lives	
+								each val in data[0].mission
+									li= val
 						.col-md-6.vision
 							h4 Vision
 							blockquote
-								p To motivate our young Civil Engineers to develop professional attributes of curiosity, creativity and integrity with the objective of serving the society.
+								p= data[0].vision
 						.clearfix
 					.row.mission
 						.col-md-6.about-image
@@ -73,5 +69,5 @@ block content
 										img(src='/img/ban1.jpg')
 						.col-md-6
 							h4 About ASCE
-							p Few years back the civil engineering department had a very active professional students’ body CIVIL ENGINEERS ASSOCIATION. But due to some reasons the society ceased to make any useful contribution to the civil engineering department and was lost in oblivion. THE CEA was a very rich resource as it had almost all the technical experts of the region under its fold. There was a need felt by all professors as well as students to rejuvenate the chapter or start a similar body to cater to the requirements of a professional course. Hence the process to establish an ASCE chapter was initiated by the students and was wholeheartedly supported by the professors.
+							p= data[0].about
 				.clearfix

@@ -28,15 +28,11 @@
 									a(href='https://plus.google.com/104198614139247257435/about')
 										i.fa.fa-google-plus
 					.col-md-6.p-l-30
-						h3 Recent Posts
+						h3 News
 						.recent-post
-							| Engineer Meetup Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor 
-							br
-							| Colossium and other bridge events
-							br
-							| Bro got an awardLorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor 
-							br
-							| blah blah blah
+							each item in footer.posts
+								span= item
+								br
 					.clearfix
 		section.copyright-content
 			.copyright

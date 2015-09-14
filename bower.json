@@ -1,0 +1,22 @@
+{
+  "name": "asce",
+  "version": "0.0.0",
+  "homepage": "https://github.com/connektivion/asce",
+  "authors": [
+    "connektivion <connektivion@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngGallery": "*"
+  }
+}

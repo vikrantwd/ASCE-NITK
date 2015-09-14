@@ -3,101 +3,129 @@ extends base_layout
 block styles
 	link(rel='stylesheet', type='text/css', href='/less/events.css')
 	link(rel='stylesheet', type='text/css', href='/css/sidemenu.css')
+	link(rel="stylesheet" type="text/css" href="/bower_components/ngGallery/src/css/ngGallery.css")
+	link(rel='stylesheet', type='text/css', href='/css/gallery.css')
 
 block content
-		.container-fluid.members-page
+		.container-fluid.members-page(ng-app='MembersGallery')
 			.row
 				section.parallax-wrapper
 					.parallax
 					h1= title
 			.row
 				.container.main-content
-					.row
-						.col-md-3
-							#side-sub-menu
-								ul.side-menu
-									li.has-sub.open
-										a  Current Batch
-											span#nav-button
-										ul
-											li.active
-												a(href="#") Officers
-												.arrow
-											li
-												a(href="#") Other Members 
-											li
-												a(href="#") Faculty
-									li.has-sub
-										a(href="#") Previous Batch
-											span#nav-button
-										ul
-											li
-												a(href="#") 2014-2015
-									li.has-sub
-										a(href="#") Become A Member
-											span#nav-button
-										ul
-											li
-												a(href="#") Recruitment
-											li
-												a(href="#") Become national member
-						.col-md-8
-							.row 
-								.col-md-12
-									h3= title
-									p
-										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
-										|Collosus 
-										|Mindbend 
-										|Nirvanha  
-										|Architect 
-										|Fanatasticity
-									p
-										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
-										|Collosus 
-										|Mindbend 
-										|Nirvanha  
-										|Architect 
-										|Fanatasticity
-								.clearfix
-								.image-banner
+					if(title=='Members')
+						.row(style='margin-bottom:30px' ng-controller='MembersController')
+							.col-md-3
+								#side-sub-menu
+									ul.side-menu
+										li.has-sub.open
+											a Current Batch
+												span#nav-button
+											ul
+												li(ng-class='curr=="core"?"active":""')
+													a(ng-click="showOfficers()") Core Members
+													div(ng-class='curr=="core"?"arrow":""')
+												li(ng-class='curr=="others"?"active":""')
+													a(ng-click="showOthers()") Other Members
+													div(ng-class='curr=="others"?"arrow":""')
+												li(ng-class='curr=="faculties"?"active":""')
+													a(ng-click="showFaculties()") Faculty
+													div(ng-class='curr=="faculties"?"arrow":""')
+										li.has-sub
+											a() Previous Batch
+												span#nav-button
+											ul
+												li(ng-class='curr=="seniors"?"active":""')
+													a(ng-click="showBatch(2015)") 2014-2015
+													div(ng-class='curr=="seniors"?"arrow":""')
+										li.has-sub
+											a() Become A Member
+												span#nav-button
+											ul
+												li(ng-class='curr=="recruit"?"active":""')
+													a(ng-click="showRecruitment()") Recruitment
+													div(ng-class='curr=="recruit"?"arrow":""')
+												li(ng-class='curr=="join"?"active":""')
+													a(ng-click="ShowJoin()") Become national member
+													div(ng-class='curr=="join"?"arrow":""')
+							.col-md-8
+								.row 
 									.col-md-12
-										h4 Core Members
-									section
-										.col-md-4
-											.thumb(style="background-image:url('/img/autocad-opp.png')")
-												div
-													.p-10
-														h2 Autocad
-														p I'll teach Y'all
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/sap.png')")
-												div
-													.p-10
-														h2 SAP
-														p learn it bro
-														.bottom-text
-															h4 Contact
-															.details Vamshi 
-															.details 3rd Year (8197184718)
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/staad.jpg')")
-												div
-													.p-10
-														h2 STAAD
-														p learn it bro
-														.bottom-text
-															h4 Contact
-															.details Vamshi 
-															.details 3rd Year (8197184718)
-											a.btn.btn-primary.read-more Read More	
+										h3= title
+										p(ng-if="curr=='recruit'")
+											| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
+											|Collosus 
+											|Mindbend 
+											|Nirvanha  
+											|Architect 
+											|Fanatasticity
+										p(ng-if="curr=='join'")
+											|log on to asce.com to become one
+										p(ng-if="curr!='join'&&curr!='recruit'")
+											|Members of asce are cool! 
+									.clearfix
+									div(ng-if="curr=='core'||curr=='faculties'")
+										.image-banner
+											.col-md-12
+												h4 {{curr=='core'?"Core Members":"Faculties"}}
+											section
+												div(ng-repeat="core in rep")
+													.col-md-4
+														figure.effect-julia
+															img(src="{{core.info.pic}}")
+															figcaption
+																div(style="position: absolute;left: 10;right: 10; bottom: 10;")
+																	p(ng-if="!(core.info.contact.number==NULL)"){{core.info.contact.number}}
+																	p(ng-if="core.info.contact.email!=''"){{core.info.contact.email}}
+																	p(ng-if="curr=='core'") {{((core.info.batch - 2012 == 4)? "Final": (core.info.batch - 2012 == 5) ? "3rd" : (core.info.batch - 2012 == 6) ? "2nd" : "First" ) + " year"}}
+														h4(style="margin-bottom: 6px;text-transform: uppercase") {{core.info.post}}
+														h5(style="margin-top: 0px;text-transform: capitalize") {{core.info.name}}
+												.clearfix
+									div(ng-if="curr=='others'||curr=='seniors'")
+										.col-md-12
+											table.table.table-striped(style="margin-top:18px")
+												thead
+													tr
+														th Sl No.
+														th Name
+														th Designation
+														th Batch
+														th Email
+												tbody
+													tr(ng-repeat='row in rep | orderBy :"info.batch" ')
+														td {{$index+1}}
+														td {{row.info.name}}
+														td(ng-if="curr=='seniors'") {{row.info.post}}
+														td(ng-if="curr=='others'") {{row.info.post + ' Member'}}
+														td {{row.info.batch}}
+														td {{row.info.contact.email}}
+					if(title=='Gallery')
+						.row(style='margin-bottom:30px' ng-controller="GalleryController")
+							.col-md-3
+								#side-sub-menu
+									ul.side-menu
+										li(ng-repeat='item in side')
+											a(ng-click="showAlbum(item)") {{item}}
+												span#tt
+							.col-md-8
+								.row
+									.col-md-12
+										h3(style="text-transform:capitalize") {{curr}}
+										.content
+												ng-gallery(images="images[curr]" thumbs-num="3")
+										h5 {{pic.pics.title}}
 										.clearfix
-										
+
 block scripts
 		script(type="text/javascript" src="/js/sidemenu.js")
+		script(type="text/javascript" src="/js/lib/angular.min.js")
+		script(type="text/javascript" src="/js/lib/angular-route.min.js")
+		script(type="text/javascript" src="/js/lib/angular-cookies.min.js")
+		script(type="text/javascript" src="/js/lib/marked.min.js")
+		script(type="text/javascript" src="/js/lib/angular-marked.min.js")
+		script(type="text/javascript" src="/js/lib/angular-resource.min.js")
+		script(type="text/javascript" src="/js/app.js")
+		script(type="text/javascript" src="/js/controllers/MembersController.js")
+		script(type="text/javascript" src="/js/controllers/GalleryController.js")
+		script(type="text/javascript" src="/bower_components/ngGallery/src/js/ngGallery.js")

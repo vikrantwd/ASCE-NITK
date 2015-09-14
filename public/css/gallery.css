@@ -1,0 +1,164 @@
+/* Common style */
+img.ng-thumb {
+    display: block;
+    height: 180px;
+    width: 24%;
+    float: left;
+    display: block;
+    cursor: pointer;
+    margin: 7px 1% 7px 0;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.members-page figure {
+	position: relative;
+	float: left;
+	margin: 10px 1%;
+	height: 190px;
+	width: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.members-page figure img {
+	position: relative;
+	display: block;
+	width: 101%;
+	opacity: 0.8;
+}
+
+.members-page figure figcaption {
+	padding: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.members-page figure figcaption::before,
+.members-page figure figcaption::after {
+	pointer-events: none;
+}
+
+.members-page figure figcaption,
+.members-page figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.members-page figure figcaption > a {
+	z-index: 2;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.members-page figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.members-page figure h2 span {
+	font-weight: 800;
+}
+
+.members-page figure h2,
+.members-page figure p {
+	margin: 0;
+}
+
+.members-page figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+/*effect*/
+figure.effect-julia {
+	background: #2f3238;
+	  border: 5px solid #fff;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+figure.effect-julia img {
+	max-width: none;
+	-webkit-transition: opacity 1s, -webkit-transform 1s;
+	transition: opacity 1s, transform 1s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.effect-julia figcaption {
+	text-align: left;
+}
+
+figure.effect-julia h2 {
+	position: relative;
+	padding: 0.5em 0;
+}
+figure.effect-julia h4{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+figure.effect-julia p {
+	margin: 0 0 0.25em;
+	padding: 0.4em 1em;
+	background: rgba(255,255,255,0.9);
+	color: #2f3238;
+	text-transform: none;
+	font-weight: 500;
+	font-size: 75%;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-360px,0,0);
+	transform: translate3d(-360px,0,0);
+}
+
+figure.effect-julia p:first-child {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+figure.effect-julia p:nth-of-type(2) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.effect-julia p:nth-of-type(3) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.effect-julia:hover p:first-child {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+figure.effect-julia:hover p:nth-of-type(2) {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.effect-julia:hover p:nth-of-type(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.effect-julia:hover img {
+	opacity: 0.4;
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
+}
+
+figure.effect-julia:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}

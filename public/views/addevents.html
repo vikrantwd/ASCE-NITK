@@ -1,0 +1,89 @@
+<div class="col-md-12" ng-controller="AddEventsOppCollCtrl">	
+	<div class="row">
+		{{draft}}
+		<h2>Main Textual Content</h2>
+		<hr>
+		<div class="row">
+			<div class="col-md-4">
+				<input type="text" placeholder="Page Name" ng-model="draft.page" class="form-group">
+			</div>
+			<div class="col-md-4">
+				<select ng-model='draft.subpageOf' ng-options='option for option in options' class='form-control form-group'>
+				</select>			
+			</div>
+			<div class="col-md-4">
+				<input type="text" placeholder="Page Title" ng-model="draft.title" class="form-group">
+			</div>
+		</div>
+		<textarea class="form-control col-md-12 form-group" rows="3" placeholder="Main Description" ng-model="draft.maindesc" ></textarea>
+		<h2>Sub Descripton</h2>
+		<hr/>
+		<div ng-repeat="draft in draft.subdesc" class="form-group">
+			<textarea class="form-control col-md-12 form-group" rows="1" placeholder="Sub Title" ng-model="draft.subtitle" ></textarea>
+			<textarea class="form-control col-md-12 form-group" rows="2" placeholder="Sub Description" ng-model="draft.subdescription" ></textarea>
+			<textarea class="form-control col-md-12 form-group" rows="1" placeholder="Sub Image" ng-model="draft.subimage" ></textarea>
+			<div class="row">
+				<div class="col-md-2">
+					<button class="btn btn-block btn-primary input-block" ng-click="addMoreDesc()">Add More</button>
+				</div>
+				<div class="col-md-2" ng-if="$index">
+					<button class="btn btn-block btn-danger input-block" ng-click="DeleteDesc($index)">Delete</button>
+				</div>
+				<div class="clearfix form-group"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<hr/>
+		<h2>Images</h2>
+		<hr/>
+			<div class="clearfix"></div>
+		<div class='row'>
+			<div ng-repeat='imagelink in draft.imagelink'>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image title" ng-model="imagelink.imagedesc.title" class="form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image Description" ng-model="imagelink.imagedesc.desc" class="form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image left" ng-model="imagelink.imagedesc.left" class="form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image right" ng-model="imagelink.imagedesc.right" class=" form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image link" ng-model="imagelink.link" class="form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image Type" ng-model="imagelink.imagedesc.stype" class="form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Image Page Link" ng-model="imagelink.imagedesc.clink" class="form-group">
+				</div>
+				<div class="clearfix"></div>
+				<div class="col-md-2">
+					<button class="btn btn-block btn-primary input-block" ng-click="addMoreImages()">Add More</button>
+				</div>
+				<div class="col-md-2" ng-if="$index">
+					<button class="btn btn-block btn-danger input-block" ng-click="DeleteImages($index)">Delete</button>
+				</div>
+				<div class="clearfix form-group"></div>
+			</div>
+		<div class="col-md-6">
+					<input type="text" placeholder="Banner Image 1" ng-model="draft.bannerimage" class=" form-group">
+				</div>
+				<div class="col-md-6">
+					<input type="text" placeholder="Banner Image 2" ng-model="draft.bannerimage2" class="form-group">
+				</div>
+		</div>
+		<div class="clearfix"></div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-3">
+				<button class="btn btn-block btn-success input-block" ng-click="save()">{{text}}</button>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>

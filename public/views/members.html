@@ -1,0 +1,70 @@
+<div class="col-md-12" ng-controller="MembersCtrl">
+	<h2>Add Members</h2>
+	<div class="row form-group">
+		<div class="col-md-2 form-group">
+			<h5>Name</h5>
+			<input type="text" placeholder="Name" ng-model="draft.
+			info.name">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Batch</h5>
+			<input type="number" placeholder="Batch" ng-model="draft.
+			info.batch">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Priority</h5>
+			<input type="number" placeholder="Priority" ng-model="draft.
+			info.priority">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Post</h5>
+			<input type="text" placeholder="Post" ng-model="draft.
+			info.post">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Pic URL</h5>
+			<input type="text" placeholder="Pic URL" ng-model="draft.
+			info.pic">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Contact Number</h5>
+			<input type="number" placeholder="Contact number" ng-model="draft.
+			info.contact.number">
+		</div>
+		<div class="col-md-2 form-group">
+			<h5>Email</h5>
+			<input type="string" placeholder="Email" ng-model="draft.
+			info.contact.email">
+		</div>
+		<div class="col-md-2 form-group pull-right">
+			<h5> </h5>
+			<button class="btn btn-success btn-block" ng-click="add()">
+			Add Member</button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<table class="table table-bordered table-striped">
+		<tbody>
+			<th>Name</th>
+			<th>Batch</th>
+			<th>priority</th>
+			<th>Post</th>
+			<th>pic</th>
+			<th>Ph no</th>
+			<th>Email</th>
+			<th>actions</th>
+		</tbody>
+		<tr ng-repeat="entity in drafts" class="pointer">
+			<td><input type="text" ng-model="entity.info.name"></td>
+			<td><input type="number" ng-model="entity.info.batch"></td>
+			<td><input type="number" ng-model="entity.info.priority"></td>
+			<td><input type="text" ng-model="entity.info.post"></td>
+			<td><input type="text" ng-model="entity.info.pic"></td>
+			<td><input type="number" ng-model="entity.info.contact.number"></td>
+			<td><input type="email" ng-model="entity.info.contact.email"></td>
+			<td>
+				<button class="btn btn-sm btn-warning" ng-click="update(entity._id,$index)">Update</button> <button class="btn btn-sm btn-danger" ng-click="delete(entity._id)">Delete</button>
+			</td>
+		</tr>
+	</table>
+</div>

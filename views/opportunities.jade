@@ -8,141 +8,148 @@ block content
 		.container-fluid.opportunities-page
 			.row
 				section.parallax-wrapper
-					.parallax
-					h1= title
+					if(focus!==undefined)
+						.parallax(style="background-image:url('#{focus.bannerimage}')!important")
+					else
+						.parallax(style="background-image:url('#{events.bannerimage}')!important")
+					if(focus!=undefined)
+						h1= focus.title
+					else
+						h1= events.title
 			.row
 				.container.main-content
 					.row
 						.col-md-3
 							#side-sub-menu
 								ul.side-menu
-									li.has-sub
-										a  Workshop
-											span#nav-button
-										ul
-											li.active
-												a(href="#") Autocad
+									if(events.page!='opportunities'||focus!=undefined)
+										if(focus!=undefined)
+											h4(style="text-transform:uppercase;") Other #{focus.subpageOf}
+										each item in events.imagelink
 											li
-												a(href="#") SAP 
-											li
-												a(href="#") STAAD
-									li.has-sub
-										a(href="#") Projects
-											span#nav-button
-										ul
-											li
-												a(href="#") Structures
-											li
-												a(href="#") Geotechnical
-											li
-												a(href="#") Steel bridge
-											li
-												a(href="#") Concrete Canoe
+												a(href="/#{events.page}/#{item.imagedesc.clink}")= item.imagedesc.title
+													span#tt
+									if(events.page=='opportunities'&&focus==undefined)
+										li.has-sub
+											a Workshop
+												span#nav-button
+											ul
+												each item in events.imagelink
+													if(item.imagedesc.stype=='w')
+														li
+															a(href="/#{events.page}/#{item.imagedesc.clink}")= item.imagedesc.title
+										li.has-sub
+											a(href="#") Projects
+												span#nav-button
+											ul
+												each item in events.imagelink
+													if(item.imagedesc.stype=='p')
+														li
+															a(href="/#{events.page}/#{item.imagedesc.clink}")= item.imagedesc.title
+										li.has-sub
+											a(href="#") ASCE / AISC Competitions
+												span#nav-button
+											ul
+												each item in events.imagelink
+													if(item.imagedesc.stype=='c')
+														li
+															a(href="/#{events.page}/#{item.imagedesc.clink}")= item.imagedesc.title
 						.col-md-8
-							.row 
+							.row
 								.col-md-12
-									h3= title
-									p
-										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
-										|Collosus 
-										|Mindbend 
-										|Nirvanha  
-										|Architect 
-										|Fanatasticity
-									p
-										| Engineer- Annual technical of fest NITK. Civil events engineer is jointly organised by ASCE NITK Student Chapter and Civil Committee Engineer 
-										|Collosus 
-										|Mindbend 
-										|Nirvanha  
-										|Architect 
-										|Fanatasticity
+									h3 Overview
+									if(focus!=undefined)
+										p= focus.maindesc
+									else
+										p= events.maindesc
+									if(focus!=undefined)
+										each p in focus.subdesc
+											h5(style="font-weight:bold")= p.subtitle
+											p= p.subdescription
+									if(events.subpageOf=='mainpage'&&focus==undefined)	
+										each p in events.subdesc
+											h5(style="font-weight:bold")= p.subtitle
+											p= p.subdescription
 								.clearfix
-								.image-banner
-									.col-md-12
-										h4 Workshops
-									section
-										.col-md-4
-											.thumb(style="background-image:url('/img/autocad-opp.png')")
-												div
-													.p-10
-														h2 Autocad
-														p I'll teach Y'all
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/sap.png')")
-												div
-													.p-10
-														h2 SAP
-														p learn it bro
-														.bottom-text
-															h4 Contact
-															.details Vamshi 
-															.details 3rd Year (8197184718)
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/staad.jpg')")
-												div
-													.p-10
-														h2 STAAD
-														p learn it bro
-														.bottom-text
-															h4 Contact
-															.details Vamshi 
-															.details 3rd Year (8197184718)
-											a.btn.btn-primary.read-more Read More	
-										.clearfix
-									.col-md-12
-										h4 Projects *
-									section.project-section
-										.project-info *these projects are being carried out by undergraduate students
-										.col-md-4
-											.thumb(style="background-image:url('/img/structural-drawings.gif')")
-												div
-													.p-10
-														h2 Structures
-														p it sucks
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/geo.jpg')")
-												div
-													.p-10
-														h2 Geotechnical
-														p Make it beak it fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck fuck
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/steel-bridge.jpg')")
-												div
-													.p-10
-														h2 Steel bridge
-														p gotta teach 'em all
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.col-md-4
-											.thumb(style="background-image:url('/img/canoe.jpg')")
-												div
-													.p-10
-														h2 Concrete Canoe
-														p Be there
-														.bottom-text
-															h4 Contact
-															.details Vamshi
-															.details Department
-											a.btn.btn-primary.read-more Read More
-										.clearfix
+								if(focus!=undefined)
+									.col-md-12(style="padding: 10px 15px 30px;")
+										section
+											row
+												h5(style="font-weight:bold") Thumbnails
+												.row
+													each context in focus.subdesc
+														if(context.subimage)
+															.col-md-4
+																.thumb(style="background-image:url('#{context.subimage}');cursor: default;")
+													.clearfix
+								else
+									.image-banner
+										if(events.page!='opportunities'&&events.subpageOf=='mainpage'&&focus==undefined)
+											section
+												each context in events.imagelink
+													.col-md-4
+														.thumb(style="background-image:url('#{context.link}')")
+															div
+																.p-10
+																	h2= context.imagedesc.title
+																	p= context.imagedesc.desc
+																	.bottom-text
+																		h4 Contact
+																		.details= context.imagedesc.left
+																		.details= context.imagedesc.right
+														a(href="/#{events.page}/#{context.imagedesc.clink}").btn.btn-primary.read-more Read More
+										if(events.page=='opportunities'&&events.subpageOf=='mainpage'&&focus==undefined)		
+											.col-md-12
+												h4 Workshops
+											section
+												each image in events.imagelink
+													if(image.imagedesc.stype=='w')
+														.col-md-4
+															.thumb(style="background-image:url('#{image.link}')")
+																div
+																	.p-10
+																		h2= image.imagedesc.title
+																		p= image.imagedesc.desc
+																		.bottom-text
+																			h4 Contact
+																			.details= image.imagedesc.left
+																			.details= image.imagedesc.right
+															a(href="/#{events.page}/#{image.imagedesc.clink}").btn.btn-primary.read-more Read More
+												.clearfix
+											.col-md-12
+												h4 Competitions
+											section
+												each image in events.imagelink
+													if(image.imagedesc.stype=='c')
+														.col-md-4
+															.thumb(style="background-image:url('#{image.link}')")
+																div
+																	.p-10
+																		h2= image.imagedesc.title
+																		p= image.imagedesc.desc
+																		.bottom-text
+																			h4 Contact
+																			.details= image.imagedesc.left
+																			.details= image.imagedesc.right
+															a(href="/#{events.page}/#{image.imagedesc.clink}").btn.btn-primary.read-more Read More
+												.clearfix
+											.col-md-12
+												h4 Projects *
+											section.project-section
+												.project-info *these projects are being carried out by undergraduate students
+												each project in events.imagelink
+													if(project.imagedesc.stype=='p')
+														.col-md-4
+															.thumb(style="background-image:url('#{project.link})")
+																div
+																	.p-10
+																		h2= project.imagedesc.title
+																		p= project.imagedesc.desc
+																		.bottom-text
+																			h4 Contact
+																			.details= project.imagedesc.left
+																			.details= project.imagedesc.right
+															a(href="/#{events.page}/#{project.imagedesc.clink}").btn.btn-primary.read-more Read More
+												.clearfix
 block scripts
 		script(type="text/javascript" src="/js/sidemenu.js")

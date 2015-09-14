@@ -10,6 +10,11 @@ $('.fades').vegas({
     overlay: "/img/overlays/05.png"
 });
 
+   $('.news-feed').vTicker('init', {speed: 400, 
+    pause: 1000,
+    showItems: 1,
+    padding:4});
+
 $('#carousels').elastislide( {
         orientation : 'vertical',
         minItems : 1,
@@ -88,8 +93,7 @@ $(document).on( 'scroll', function(){
     var checklogo=0;
     if(pos+81>pos3){
         $('.nav-menu').css({'position':'fixed','background':'rgba(0,0,0,0.5)','top':'0','left':'0','width':'100%','margin-top':'0px','transition':'top 1s'});
-        $('.main-content').css('margin-top','100vh');
-        
+        $('.main-content').css('margin-top','100vh');  
     }
         
     else{
@@ -97,9 +101,15 @@ $(document).on( 'scroll', function(){
         $('.main-content').css('margin-top','-90px');
         
     }
+    console.log(pos3-pos)
+    if(pos3-pos<500){
+       $('.partial-date').style('opacity','0','important').css('transition','opacity .3s ease');
 
+    }else{
+      $('.partial-date').style('opacity','1')
+    }
     if(pos+174>pos3){/*logo nitk fades*/
-            $('.nitklogo').css({'opacity':'0','transition':'opacity .3s ease'})
+         $('.nitklogo').css({'opacity':'0','transition':'opacity .3s ease'})
     }else{
         $('.nitklogo').css('opacity','1')
     }

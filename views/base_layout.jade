@@ -16,47 +16,23 @@ html
 				.row.nav-menu-wrapper
 					.ascelogo
 						img(src='/img/asce.png')
+					button.boot-button( type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".nav-menu" aria-expanded="false")
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
 					ul.nav-menu
-						li.flip-wrapper
-							.flipper
-								.front.home
-									|HOME
-								.back
-									a(href='/')
-										i.fa.fa-home
-						li.flip-wrapper
-							.flipper
-								.front
-									|EVENTS
-								.back
-									a(href='/events')
-										i.fa.fa-home
-						li.flip-wrapper
-							.flipper
-								.front OPPORTUNITIES
-								.back
-									a(href='/opportunities')
-										i.fa.fa-home
-						li.flip-wrapper
-							.flipper
-								.front
-									|COLLABORATE
-								.back
-									a(href='/collaborate')
-										i.fa.fa-home
-						li.flip-wrapper
-							.flipper
-								.front
-									|MEMBERS
-								.back
-									a(href='/members')
-										i.fa.fa-home
-						li.flip-wrapper
-							.flipper
-								.front
-									|GALLERY
-								.back
-									i.fa.fa-home
+						li
+							a(href='/') HOME
+						li
+							a(href='/events') EVENTS
+						li
+							a(href="/opportunities") OPPORTUNITIES
+						li
+							a(href="/collaborate") COLLABORATE
+						li
+							a(href="/members") MEMBERS
+						li
+							a(href="/gallery") GALLERY
 					.clearfix
 				.clearfix
 				.row

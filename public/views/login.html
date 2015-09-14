@@ -1,0 +1,34 @@
+<div class="col-md-12" >
+	<h2>Login</h2>{{uid}}
+	<hr/>	
+	<div class="row form-group">
+		<div class="row">
+			<div class="col-md-1" style="text-align:right">
+				<h5>Username:</h5>
+			</div>
+			<div class="col-md-3">
+				<input type="text" placeholder="Username" class="form-control" ng-model="doc.username">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-1" style="text-align:right">
+				<h5>Password:</h5>
+			</div>
+			<div class="col-md-3">
+				<input type="password" placeholder="Password" class="form-control" ng-model="doc.password">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+				<h5>&nbsp;</h5>
+			</div>
+			<div class="col-md-3">
+				<button class="btn btn-success" ng-click="auth()">Login</button>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,50 @@
+html(ng-app="AsceCms")
+	head
+		title= title
+
+		link(rel="stylesheet" href="/css/bootstrap.min.css")
+		link(rel="stylesheet" href="/css/admin.css")
+		link(rel="stylesheet" href="/less/base_layout.css")
+		link(rel="stylesheet" href="/less/footer.css")
+		link(href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+
+		script(type="text/javascript" src="/js/lib/jquery.min.js")
+		script(type="text/javascript" src="/js/lib/lodash.min.js")
+		script(type="text/javascript" src="/js/lib/angular.min.js")
+		script(type="text/javascript" src="/js/lib/angular-route.min.js")
+		script(type="text/javascript" src="/js/lib/angular-cookies.min.js")
+		script(type="text/javascript" src="/js/lib/marked.min.js")
+		script(type="text/javascript" src="/js/lib/angular-marked.min.js")
+		script(type="text/javascript" src="/js/lib/angular-resource.min.js")
+
+		script(type="text/javascript" src="/js/app.js")
+		script(type="text/javascript" src="/js/controllers/EventsOppCollCtrl.js")
+		script(type="text/javascript" src="/js/controllers/AddEventsOppCollCtrl.js")
+		script(type="text/javascript" src="/js/controllers/MainCtrl.js")
+		script(type="text/javascript" src="/js/controllers/MembersCtrl.js")
+		script(type="text/javascript" src="/js/controllers/GalleryCtrl.js")
+	body(ng-controller="AsceToolsController" style="overflow-x:hidden")
+		nav.navbar.navbar-inverse
+			.container
+				#navbar.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li(ng-show="misc.uid==0" ng-class="active")
+							a(href="#/") Login
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'mainpage'}")
+							a(href="#/mainpage") MainPage
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'events'}")
+							a(href="#/events/events") events
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'opportunities'}")
+							a(href="#/events/opportunities") Opportunities
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'collaborate'}")
+							a(href="#/events/collaborate") Collaborate
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'members'}")
+							a(href="#/members") Members
+						li(ng-show="misc.uid!=0" ng-class="{active: misc.activetab == 'gallery'}")
+							a(href="#/gallery") Gallery
+						li(ng-show="misc.uid!=0" ng-click='logout();')
+							a(href="#/") Logout
+		.container(style="margin-bottom:20px;min-height:400px")
+			div(ng-view autoscroll="true")
+		include ./footer.jade

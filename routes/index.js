@@ -1,22 +1,32 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../db/db');
+var mongoose = require('mongoose');
+var async = require('async');
 
-/* GET home page. */
+var footer;
+var mainpage;
+
+var mainpagedata = function(callback){
+	db.MainSchema.find({},function(err,docs){
+	    mainpage = docs;
+	    callback(null,mainpage);
+	});
+}
+
+var footerlist = function(callback){
+	db.RecentPosts.find({},function(err,data){
+		footer = data[0];
+		callback(null,footer);
+	});
+}
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ASCE' });
+	async.series([footerlist,mainpagedata],function(err,results){
+		if(!err){
+			res.render('index',{title :'NITK ASCE CHAPTER',footer: footer,data:mainpage});
+		}
+	});
 });
-router.get('/events', function(req, res, next) {
-  res.render('events', { title: 'ASCE Events' });
-});
-router.get('/opportunities', function(req, res, next) {
-  res.render('opportunities', { title: 'Opportinities' });
-});
-router.get('/collaborate', function(req, res, next) {
-  res.render('opportunities', { title: 'Collaboration' });
-});
-router.get('/members', function(req, res, next) {
-  res.render('members', { title: 'Members' });
-});
-
 
 module.exports = router;

@@ -23,6 +23,7 @@
     margin-bottom: 1px;
 }
 #side-sub-menu ul li a {
+      position: relative;
   text-decoration: none;
   cursor: pointer;
 }
@@ -193,4 +194,29 @@ span#nav-button, span#nav-button:before, span#nav-button:after {
 }
  span#nav-button.active:after {
   transform: rotate(-45deg);
+}
+
+span#tt::after {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f111';
+    font-size: 6px;
+    left: 6px;
+    bottom: -6px;
+    color: white;
+}
+span#tt::before {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f111';
+    font-size: 6px;
+    left: 6px;
+    top: 3px;
+    color: white;
+}
+span#tt{
+    position: absolute;
+    right: 20px;
+    width: 10px;
+    height: 10px;
 }
