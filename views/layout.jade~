@@ -1,0 +1,57 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', type='text/css', href='/less/layout.css')
+		link(rel="stylesheet" href="/less/footer.css")
+		link(rel="stylesheet" href="/css/bootstrap.min.css")
+		link(href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css')
+		link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/css/vegas.min.css")
+
+		block styles
+
+	body
+		.container-fluid.header
+			.row
+				.fixed1
+					.fades
+				.ascelogo
+					img(src='/img/asce.png')
+				.nitklogo
+					img(src='/img/enginw.png')
+				.partial-date
+					include asce-date-arp/date.html
+					if(data[0].news!=undefined)
+						.news-feed
+							ul
+								each item in data[0].news
+									li= item
+				ul.nav-menu
+					li 
+						a(href='/') HOME
+					li
+						a(href='/events') EVENTS
+					li
+						a(href="/opportunities") OPPORTUNITIES
+					li
+						a(href="/collaborate") COLLABORATE
+					li
+						a(href="/members") MEMBERS
+					li
+						a(href="/gallery") GALLERY
+				.main-content
+					block content
+
+
+				include ./footer.jade
+
+
+		script(src="/js/modernizr.custom.17475.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+		script(src="/js/skrollr.min.js")
+		script(src="/js/vegas.min.js")
+		script(src="/js/jquery.elastislide.js")
+		script(src="/js/ticker.js")
+		script(src="/js/override.js")
+		block srcipts
